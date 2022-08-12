@@ -10,7 +10,7 @@ import movies from './reducers';
 const store=legacy_createStore(movies);
 
 // console.log('store',store)
-// console.log("store state",store.getState());
+console.log("store state",store.getState());
 
 // store.dispatch({
 //   type:'ADD_MOVIES',

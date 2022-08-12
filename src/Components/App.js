@@ -10,14 +10,16 @@ class App extends React.Component {
     const {store}=this.props;
     store.subscribe(()=>{
       console.log('updated');
-      // this.forceUpdate();
+      this.forceUpdate();
     })
     store.dispatch(addMovies(data));
     console.log('STATE',store.getState());
   }
 
   render() 
-  {
+    {
+      const {list}=this.props.store.getState();
+      console.log('render')
     return (
       <div className="App">
         <Navbar />
@@ -27,7 +29,7 @@ class App extends React.Component {
             <div className="tab">Favourites</div>
           </div>
           <div className="list">
-            {data.map((movie, index) => (
+            {list.map((movie, index) => (
               <MovieCard movie={movie} key={`movies-${index}`} />
             ))}
           </div>
