@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { legacy_createStore } from 'redux';
+import {rootReducer} from './reducers';
 
 import './index.css';
 import App from './Components/App';
 import movies from './reducers';
 
-const store=legacy_createStore(movies);
+const store=legacy_createStore(rootReducer);
 
 // console.log('store',store)
 console.log("store state",store.getState());
