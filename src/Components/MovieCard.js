@@ -12,6 +12,7 @@ class MovieCard extends React.Component{
         this.props.dispatch(addToFavourites(movie));
     }
     render(){
+        
         const {movie,isfavourite}=this.props
         return(
             <div className='movie-card' >

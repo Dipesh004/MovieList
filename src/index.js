@@ -1,14 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import { legacy_createStore } from 'redux';
-import {rootReducer} from './reducers';
+import { applyMiddleware, legacy_createStore } from 'redux';
+import rootReducer from './reducers';
+import thunk from 'redux-thunk';
 
 import './index.css';
 import App from './Components/App';
-import movies from './reducers';
 
-const store=legacy_createStore(rootReducer);
+const logger=({dispatch,getState})=>(next)=>(action)=>{
+  if(typeof action!=='function'){console.log('action type=',action.type);}
+  next(action);
+}
+
+// const thunk=({dispatch,getState})=>(next)=>(action)=>{
+//   if(typeof action==='function'){
+//     action(dispatch);
+//   }
+//   next(action);     //we commented this out because we are using thunk package and thunk will write the same code for us internally
+// }
+const store=legacy_createStore(rootReducer,applyMiddleware(logger,thunk));
 
 // console.log('store',store)
 console.log("store state",store.getState());
