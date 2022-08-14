@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -182,4 +184,102 @@ body {
   padding: 20px 0;
   font-size: 20px;
   color: #6d6d6d;
+}
+
+@media(max-width: 683px)  { .search-container input {
+  height: 30px;
+  width: 250px; 
+}
+#search-btn {
+  height: 30px !important;
+}
+.nav {
+  height: 50px;
+}
+.search-results {
+  position: absolute;
+  top: 30px;
+}
+.search-result .movie-info button {
+  margin: 20px 17.5px;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 9px 1px !important;
+}
+.search-result img {
+  height: 120px;
+}
+.search-result > div span {
+  font-size: 17.5px;
+  padding: 10px;
+  font-weight: 600;
+}
+.main {
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+.main .tabs {
+  font-size: 15px;
+}
+.main .tabs .tab {
+  padding: 5px;
+  margin-right: 3.5px;
+}
+.movie-card:not(:first-child) {
+  margin-top: 10px;
+}
+.movie-card .left img {
+  height: 200px;
+}
+.movie-card .right {
+  position: relative;
+  flex: 10;
+}
+.movie-card .title {
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 550;
+}
+.movie-card .plot {
+  margin-top: -2.5px;
+  padding: 0 10px;
+  font-size: 12.5px;
+  font-weight: 450;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px 5px;
+  box-sizing: border-box;
+}
+.footer .rating {
+  font-size: 15px;
+  font-weight: 600;
+}
+.footer button {
+  font-size: 12.5px;
+  padding: 7px 10px;
+  text-shadow: none;
+  border-radius: 3px;
+  border: none;
+  font-weight: 600;
+}
+.favourite-btn {
+  background-color: #2185d0;
+  color: #fff;
+}
+.unfavourite-btn {
+  background-color: #db2828;
+  color: #fff;
+  text-shadow: none;
+}
+.no-movies {
+  padding: 20px 0;
+  font-size: 15px;
+  color: #6d6d6d;
+}
 }
